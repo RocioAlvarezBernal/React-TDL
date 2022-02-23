@@ -9,7 +9,7 @@ import com.todoB.todo.repository.LoginRepo;
 @Service
 public  class LoginService implements LoginServiceInt {
 	
-	public ArrayList<Login> employees = new ArrayList<Login>();
+	public ArrayList<Login> logins = new ArrayList<Login>();
 	
 	@Autowired
 	public LoginRepo logRepo;
@@ -17,7 +17,7 @@ public  class LoginService implements LoginServiceInt {
 	
 	@Override
 	public Login create(Login emp) {
-		employees.add(emp);
+		logins.add(emp);
 		logRepo.save(emp);
 		return emp;
 	}
@@ -35,7 +35,7 @@ public  class LoginService implements LoginServiceInt {
 
 	@Override
 	public ArrayList<Login> findAll() {
-		return employees;
+		return logins;
 	}
 
 }
